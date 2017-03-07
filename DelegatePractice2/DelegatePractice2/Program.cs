@@ -8,6 +8,7 @@ namespace DelegatePractice2
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
             List<Employee> empList = new List<Employee>();
@@ -16,17 +17,18 @@ namespace DelegatePractice2
             empList.Add(new Employee() { EMPId = 103, Name = "Jaanu", Experience = 5, Salary = 30000 });
             empList.Add(new Employee() { EMPId = 104, Name = "Jenny", Experience = 7, Salary = 60000 });
             empList.Add(new Employee() { EMPId = 105, Name = "Jeni", Experience = 3, Salary = 50000 });
+            Employee.PromoteEmployees(empList);
         }
     }
 
-    class Employee
+    public class Employee
     {
         public int EMPId { get; set; }
         public string Name { get; set; }
         public double Salary { get; set; }
         public int Experience { get; set; }
 
-        public void PromoteEmployees(List<Employee> employees)
+        public static void PromoteEmployees(List<Employee> employees)
         {
             foreach (Employee emp in employees)
             {
